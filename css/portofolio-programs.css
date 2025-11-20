@@ -1,0 +1,94 @@
+/* portfolio-programs.css */
+
+/* PubFlow Manager section */
+#datamanager {
+  max-width: 1200px;
+  margin: .5rem auto;
+  padding: 1rem;
+}
+
+#datamanager h2 {
+  font-size: 2em;
+  color: #003366;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#datamanager p {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+
+/* Features list below program description */
+#datamanager .features {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style: disc;
+    max-width: 800px;        /* prevent text overlapping picture */
+}
+
+/* Portfolio section images */
+#datamanager .portfolio-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#datamanager .portfolio-images img {
+    width: 32%;          
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Desktop view: HexaSort image */
+#hexasort .portfolio-hexasort {
+    width: 65%;            /* Perfect size for desktop */
+    max-width: 1260px;     /* Match original image width */
+    margin: 0 auto;        /* Center horizontally */
+}
+
+#hexasort .portfolio-hexasort img {
+    width: 100%;           /* Fill container */
+    height: auto;          /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Tablet & Phone: stack images vertically */
+@media screen and (max-width: 959px) {
+    #datamanager .portfolio-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #datamanager .portfolio-images img {
+        width: 90%;
+        margin-bottom: 20px;
+    }   
+
+    #hexasort .portfolio-hexasort {
+        width: 95%;             /* almost full width */
+        margin: 0 auto 5px auto; /* center + bottom margin */
+    }
+
+    #hexasort .portfolio-hexasort img {
+        width: 100%;            /* fill container */
+        height: auto;
+        display: block;
+        margin: 0;              /* no extra spacing needed */
+    }
+
+     /* Optional: features list responsive */
+    #hexasort .features {
+        max-width: 95%;
+        margin: 0 auto 20px auto;
+        padding-left: 20px;
+    }
+}
+
+
+
+

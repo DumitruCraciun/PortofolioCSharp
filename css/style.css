@@ -1,0 +1,89 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header with hero image */
+header {
+  background: url('../media/pictures/banner.png') no-repeat center center/cover;
+  height: 250px; /* taller for hero style */
+  display: flex;
+  justify-content: flex-start; /* text on left side */
+  align-items: center;
+  position: relative;
+  color: white;
+  padding-left: 50px; /* space for text from left */
+}
+
+/* Dark overlay for readability */
+header::after {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.2); /* semi-transparent dark overlay */
+}
+
+/* Header text on top of overlay */
+.header-text {
+  position: relative;
+  z-index: 1;
+}
+
+.header-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-text p {
+  font-size: 1.5rem;
+}
+
+.program-nav {
+  margin-top: 80px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  padding-left: 15px;   /* space from left edge */
+  flex-wrap: wrap; /* wrap buttons on small screens */
+}
+
+.program-button {
+  background-color: #1e3a8a; /* dark blue button */
+  color: white;
+  font-size: .9em;
+  padding: 8px 6px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.program-button:hover {
+  background-color: #3b82f6; /* lighter blue on hover */
+}
+
+
+/* Main content */
+main {
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0); /* soft light gray gradient */
+  color: black; /* text stands out */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h2 {
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f4f4f4;
+  margin-top: 2rem;
+}

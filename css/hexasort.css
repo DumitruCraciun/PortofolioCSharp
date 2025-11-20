@@ -1,0 +1,57 @@
+/* hexasort.css */
+
+/* PubFlow Manager section */
+#hexasort {
+  max-width: 1200px;
+  margin: .5rem auto;
+  padding: 1rem;
+}
+
+#hexasort h2 {
+  font-size: 2em;
+  color: #003366;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#hexasort p {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+
+/* Desktop view: HexaSort image */
+#hexasort .portfolio-hexasort {
+    width: 65%;            /* Perfect size for desktop */
+    max-width: 1260px;     /* Match original image width */
+    margin: 0 auto;        /* Center horizontally */
+}
+
+#hexasort .portfolio-hexasort img {
+    width: 100%;           /* Fill container */
+    height: auto;          /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Tablet & Phone: stack images vertically */
+@media screen and (max-width: 959px) {
+    #hexasort .portfolio-hexasort {
+        width: 95%;             /* almost full width */
+        margin: 0 auto 5px auto; /* center + bottom margin */
+    }
+
+    #hexasort .portfolio-hexasort img {
+        width: 100%;            /* fill container */
+        height: auto;
+        display: block;
+        margin: 0;              /* no extra spacing needed */
+    }
+
+     /* Optional: features list responsive */
+    #hexasort .features {
+        max-width: 95%;
+        margin: 0 auto 20px auto;
+        padding-left: 20px;
+    }
+}
