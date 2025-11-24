@@ -90,10 +90,11 @@
     function miniYouResponse(question) {
       question = question.toLowerCase();
 
+      // Direct answers for your programs
       if (question.includes("pubflow")) 
         return "PubFlow is a publication workflow automation tool using SQLite and C#. I can guide you to its page!";
       if (question.includes("data") || question.includes("datamanager"))
-        return "DataManager automates CSV processing, SFTP imports, validation and reporting.";
+        return "DataManager automates CSV processing, SFTP imports, validation, and reporting.";
       if (question.includes("hexasort"))
         return "HexaSort is a visual data-sorting tool with interactive color-coded grids.";
       if (question.includes("shift"))
@@ -103,20 +104,44 @@
 
       if (question.includes("hello") || question.includes("hi"))
         return "Hello! I'm PocketAI. Ask me about any of Dumitru's projects!";
-
       if (question.includes("who are you"))
         return "I'm PocketAI — a small JavaScript AI helper built by Dumitru.";
 
+      // Skills, tech, and features
       if (question.includes("sql"))
-        return "Most of the programs use SQL integration for reporting and logging.";
-
+        return "Most of Dumitru's programs use SQL integration for reporting and logging.";
       if (question.includes("c#") || question.includes("csharp"))
-        return "Dumitru builds full desktop applications in C#, including UI, data processing and automation.";
+        return "Dumitru builds full desktop applications in C#, including UI, data processing, automation, and system integration.";
 
+      if (question.includes("api"))
+        return "Dumitru uses APIs in some programs to send automated emails, fetch or push data securely, and integrate with external systems.";
+      if (question.includes("javascript") || question.includes("js"))
+        return "This website, including PocketAI, was built with JavaScript to create interactive features and a responsive user experience.";
+        if (question.includes("sftp"))
+        return "DataManager connects to remote servers via SFTP to download and validate incoming files automatically.";
+      if (question.includes("automation"))
+        return "Many of Dumitru's programs include automation: file handling, data validation, email notifications, and task scheduling.";
+      if (question.includes("email"))
+        return "Some programs automatically send emails using secure APIs when actions are completed or errors occur.";
+      if (question.includes("ui") || question.includes("interface"))
+        return "All programs have user-friendly interfaces in C# WinForms or console applications, designed for efficiency and clarity.";
+      if (question.includes("reports") || question.includes("logging"))
+        return "Dumitru's programs generate reports and maintain logs using SQL databases or structured CSV files.";
+      if (question.includes("performance"))
+        return "The applications are optimized for processing millions of records quickly and accurately.";
+
+      // Fun
       if (question.includes("joke"))
         return "Here's one: Why do programmers hate nature? It has too many bugs!";
+      
+        // Proactive suggestions for vague questions
+      if (question.includes("help") || question.includes("guide") || question.includes("how") || question.includes("what")) {
+        return "I can help! Try asking about one of Dumitru's programs: PubFlow, DataManager, HexaSort, ShiftMaster, or SmartTrader. " +
+              "Or ask about C#, SQL, automation, SFTP, emails, or performance.";
+      }
 
       return "I'm not sure about that yet — but I'm learning! Try asking about PubFlow, DataManager, HexaSort, ShiftMaster, or SmartTrader.";
+
     }
 
     sendBtn.addEventListener("click", () => {
