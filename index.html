@@ -56,7 +56,76 @@
       </div>
 
     </section>
+
+    <section id="mini-you">
+      <h2>PocketAI — Your AI Web Assistant</h2>
+      <p>This is a small JavaScript-based AI helper I built to demonstrate lightweight 
+        natural-language processing in the browser. It answers questions about my projects 
+        and helps you navigate this portfolio.</p>
+
+      <div class="mini-chat">
+        <div id="chat-box"></div>
+
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Ask PocketAI something..." />
+          <button id="send-btn">Send</button>
+        </div>
+      </div>
+    </section>
 </main>
+
+<script>
+    const chatBox = document.getElementById("chat-box");
+    const input = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    function addMessage(sender, text) {
+      const msg = document.createElement("div");
+      msg.innerHTML = "<strong>" + sender + ":</strong> " + text;
+      msg.style.marginBottom = "8px";
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function miniYouResponse(question) {
+      question = question.toLowerCase();
+
+      if (question.includes("pubflow")) 
+        return "PubFlow is a publication workflow automation tool using SQLite and C#. I can guide you to its page!";
+      if (question.includes("data") || question.includes("datamanager"))
+        return "DataManager automates CSV processing, SFTP imports, validation and reporting.";
+      if (question.includes("hexasort"))
+        return "HexaSort is a visual data-sorting tool with interactive color-coded grids.";
+      if (question.includes("shift"))
+        return "ShiftMaster creates monthly driver schedules with conflict detection and drag-and-drop editing.";
+      if (question.includes("trade") || question.includes("smart"))
+        return "SmartTrader calculates investment pyramids and visualizes simulated profit levels.";
+
+      if (question.includes("hello") || question.includes("hi"))
+        return "Hello! I'm PocketAI. Ask me about any of Dumitru's projects!";
+
+      if (question.includes("who are you"))
+        return "I'm PocketAI — a small JavaScript AI helper built by Dumitru.";
+
+      return "I'm not sure about that yet — but I'm learning! Try asking about PubFlow, DataManager, HexaSort, ShiftMaster, or SmartTrader.";
+    }
+
+    sendBtn.addEventListener("click", () => {
+      const text = input.value.trim();
+      if (text === "") return;
+
+      addMessage("You", text);
+      input.value = "";
+
+      const reply = miniYouResponse(text);
+      setTimeout(() => addMessage("Mini-You", reply), 300);
+    });
+
+    input.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendBtn.click();
+    });
+  </script>
+
 
 <footer>
     <p>© 2025 Dumitru Craciun</p>
