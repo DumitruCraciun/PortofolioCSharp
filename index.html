@@ -107,6 +107,15 @@
       if (question.includes("who are you"))
         return "I'm PocketAI — a small JavaScript AI helper built by Dumitru.";
 
+      if (question.includes("sql"))
+        return "Most of the programs use SQL integration for reporting and logging.";
+
+      if (question.includes("c#") || question.includes("csharp"))
+        return "Dumitru builds full desktop applications in C#, including UI, data processing and automation.";
+
+      if (question.includes("joke"))
+        return "Here's one: Why do programmers hate nature? It has too many bugs!";
+
       return "I'm not sure about that yet — but I'm learning! Try asking about PubFlow, DataManager, HexaSort, ShiftMaster, or SmartTrader.";
     }
 
@@ -118,7 +127,7 @@
       input.value = "";
 
       const reply = miniYouResponse(text);
-      setTimeout(() => addMessage("Mini-You", reply), 300);
+      setTimeout(() => addMessage("PocketAI", reply), 300);
     });
 
     input.addEventListener("keypress", (e) => {
