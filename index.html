@@ -20,6 +20,7 @@
         <a href="hexasort.html" class="program-button">HexaSort</a>
         <a href="shiftmaster.html" class="program-button">ShiftMaster</a>
         <a href="smarttrade.html" class="program-button">SmartTrade</a>
+        <a href="pricing.html" class="program-button">Pricing DLL</a>
       </nav>
     </div>
 </header>
@@ -96,7 +97,7 @@
       if (question.includes("data") || question.includes("datamanager"))
         return "DataManager automates CSV processing, SFTP imports, validation, and reporting.";
       if (question.includes("hexasort"))
-        return "HexaSort is a visual data-sorting tool with interactive color-coded grids.";
+        return "HexaSort is an automated console tool that handles large datasets, manages file workflows, and runs scheduled data-processing tasks.";
       if (question.includes("shift"))
         return "ShiftMaster creates monthly driver schedules with conflict detection and drag-and-drop editing.";
       if (question.includes("trade") || question.includes("smart"))
@@ -117,7 +118,7 @@
         return "Dumitru uses APIs in some programs to send automated emails, fetch or push data securely, and integrate with external systems.";
       if (question.includes("javascript") || question.includes("js"))
         return "This website, including PocketAI, was built with JavaScript to create interactive features and a responsive user experience.";
-        if (question.includes("sftp"))
+      if (question.includes("sftp"))
         return "DataManager connects to remote servers via SFTP to download and validate incoming files automatically.";
       if (question.includes("automation"))
         return "Many of Dumitru's programs include automation: file handling, data validation, email notifications, and task scheduling.";
@@ -129,6 +130,12 @@
         return "Dumitru's programs generate reports and maintain logs using SQL databases or structured CSV files.";
       if (question.includes("performance"))
         return "The applications are optimized for processing millions of records quickly and accurately.";
+      if (question.includes("pricing") || question.includes("dll") || question.includes("tariff")) {
+        return "Pricing Library (PRICING.dll) calculates postal prices based on tariffs, zones, mail type, weight, and container. " +
+           "It can load pricing tables from a file and return calculated prices programmatically.";}
+      if (question.includes("get price") || question.includes("load pricing") || question.includes("calculate price")) {
+        return "To calculate a price, create a `ClsTariffRequest`, fill in zone, format, weight, and other details, then call `GetPrice()` to get the result.";}
+
 
       // Fun
       if (question.includes("joke"))
@@ -136,11 +143,11 @@
       
         // Proactive suggestions for vague questions
       if (question.includes("help") || question.includes("guide") || question.includes("how") || question.includes("what")) {
-        return "I can help! Try asking about one of Dumitru's programs: PubFlow, DataManager, HexaSort, ShiftMaster, or SmartTrader. " +
+        return "I can help! Try asking about one of Dumitru's programs: PubFlow, DataManager, HexaSort, ShiftMaster, SmartTrader, or Pricing DLL. " +
               "Or ask about C#, SQL, automation, SFTP, emails, or performance.";
       }
 
-      return "I'm not sure about that yet — but I'm learning! Try asking about PubFlow, DataManager, HexaSort, ShiftMaster, or SmartTrader.";
+      return "I'm not sure about that yet — but I'm learning! Try asking about PubFlow, DataManager, HexaSort, ShiftMaster, SmartTrader, or Pricing DLL.";
 
     }
 
@@ -161,9 +168,12 @@
   </script>
 
 
+
 <footer>
-    <p>© 2025 Dumitru Craciun</p>
+  <p>© 2025 Dumitru Craciun | <a href="media/documents/CV - Dumitru Craciun.pdf" target="_blank">Download CV</a></p>
 </footer>
+
+
 
 </body>
 </html>
