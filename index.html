@@ -172,33 +172,29 @@
   </footer>
 
   <script>
-      // Citește titlul principal al paginii (ex: "PubFlow - Magazine Manager")
-      const pageTitle = document.querySelector('h2')?.innerText || '';
+    const pageTitle = document.querySelector('h2')?.innerText || '';
 
-      // Asociază fiecare titlu cu ID-ul butonului corespunzător
-      const buttonMap = {
-          'PubFlow': 'pubflow',
-          'DataManager': 'datamanager',
-          'HexaSort': 'hexasort',
-          'ShiftMaster': 'shiftmaster',
-          'SmartTrade': 'smarttrade',
-          'Pricing Library': 'pricinglibrary'
-      };
+    const buttonMap = {
+        'PubFlow': 'pubflow.html',
+        'DataManager': 'datamanager.html',
+        'HexaSort': 'hexasort.html',
+        'ShiftMaster': 'shiftmaster.html',
+        'SmartTrade': 'smarttrade.html',
+        'Pricing Library': 'pricinglibrary.html'
+    };
 
-      // Găsește cheia (titlul) care se potrivește cu titlul paginii curente
-      const foundKey = Object.keys(buttonMap).find(key => pageTitle.includes(key));
-      if (foundKey) {
-          const targetButtonId = buttonMap[foundKey];
-          const targetButton = document.querySelector(`.program-button[href="${targetButtonId}"]`);
-          if (targetButton) {
-              targetButton.classList.add('active');
-          }
-      } else {
-          // Dacă niciun buton nu se potrivește (e pagina principală), evidențiază home
-          const homeIcon = document.querySelector('.home-icon');
-          if (homeIcon) homeIcon.classList.add('active');
-      }
-  </script>
+    const foundKey = Object.keys(buttonMap).find(key => pageTitle.includes(key));
+    if (foundKey) {
+        const targetButtonHref = buttonMap[foundKey];
+        const targetButton = document.querySelector(`.program-button[href="${targetButtonHref}"]`);
+        if (targetButton) {
+            targetButton.classList.add('active');
+        }
+    } else {
+        const homeIcon = document.querySelector('.home-icon');
+        if (homeIcon) homeIcon.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
