@@ -57,5 +57,21 @@
     <p>© 2025 Dumitru Craciun | <a href="media/documents/CV - Dumitru Craciun.pdf" target="_blank">Download CV</a></p>
   </footer>
 
+  <script>
+  // Obține numele fișierului curent
+  const currentPage = window.location.pathname.split("/").pop();
+  
+  // Găsește toate butoanele din navigare
+  const buttons = document.querySelectorAll('.program-button');
+  
+  // Parcurge butoanele și adaugă clasa 'active' celui care se potrivește
+  buttons.forEach(button => {
+    const buttonHref = button.getAttribute('href');
+    if (buttonHref === currentPage) {
+      button.classList.add('active');
+    }
+  });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+
+# Local Netlify files (daca folosesti Netlify CLI)
+.netlify/
+
+# Temp files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*~

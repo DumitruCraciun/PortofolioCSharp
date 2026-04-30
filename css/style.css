@@ -49,11 +49,7 @@ header::after {
   background-color: #1e3a8a;
   padding: 6px;
   transition: background-color 0.3s;
-
-  background-image: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'>\
-    <path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/>\
-  </svg>");
+  background-image: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'>\<path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/>\</svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -83,6 +79,19 @@ header::after {
 .program-button:hover {
   background-color: #3b82f6; /* lighter blue on hover */
 }
+
+/* Stil pentru butonul activ (pagina curentă) */
+.home-icon.active {
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+}
+
+.program-button.active {
+  background-color: #3b82f6; /* albastru deschis */
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+  font-weight: bold;
+}
+
 
 /* --- Responsive fixes for small screens --- */
 @media (max-width: 600px) {
@@ -275,8 +284,6 @@ section {
     font-size: 0.9rem;
   }
 }
-
-
 
 /* Footer */
 footer {
