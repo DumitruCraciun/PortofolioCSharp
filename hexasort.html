@@ -57,33 +57,34 @@
     <p>© 2025 Dumitru Craciun | <a href="media/documents/CV - Dumitru Craciun.pdf" target="_blank">Download CV</a></p>
   </footer>
 
-<script>
-    // Obține segmentul final al URL-ului (ex: 'shiftmaster', 'datamanager')
-    const currentPath = window.location.pathname;
-    const currentSlug = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+  <script>
+      // Citește titlul principal al paginii (ex: "PubFlow - Magazine Manager")
+      const pageTitle = document.querySelector('h2')?.innerText || '';
 
-    // Selectează toate butoanele din navigație
-    const navButtons = document.querySelectorAll('.program-button');
+      // Asociază fiecare titlu cu ID-ul butonului corespunzător
+      const buttonMap = {
+          'PubFlow': 'pubflow',
+          'DataManager': 'datamanager',
+          'HexaSort': 'hexasort',
+          'ShiftMaster': 'shiftmaster',
+          'SmartTrade': 'smarttrade',
+          'Pricing Library': 'pricinglibrary'
+      };
 
-    navButtons.forEach(button => {
-        // Obține valoarea atributului href (ex: 'shiftmaster.html')
-        let buttonHref = button.getAttribute('href');
-        
-        // Elimină extensia .html din href pentru a compara doar numele (ex: 'shiftmaster')
-        let buttonSlug = buttonHref ? buttonHref.replace('.html', '') : '';
-
-        // Dacă slug-ul butonului se potrivește cu cel din URL, adaugă clasa 'active'
-        if (buttonSlug === currentSlug) {
-            button.classList.add('active');
-        }
-    });
-
-    // Caz special pentru pagina principală (index.html)
-    if (currentSlug === '' || currentSlug === 'index' || currentPath === '/') {
-        const homeIcon = document.querySelector('.home-icon');
-        if (homeIcon) homeIcon.classList.add('active');
-    }
-</script>
+      // Găsește cheia (titlul) care se potrivește cu titlul paginii curente
+      const foundKey = Object.keys(buttonMap).find(key => pageTitle.includes(key));
+      if (foundKey) {
+          const targetButtonId = buttonMap[foundKey];
+          const targetButton = document.querySelector(`.program-button[href="${targetButtonId}"]`);
+          if (targetButton) {
+              targetButton.classList.add('active');
+          }
+      } else {
+          // Dacă niciun buton nu se potrivește (e pagina principală), evidențiază home
+          const homeIcon = document.querySelector('.home-icon');
+          if (homeIcon) homeIcon.classList.add('active');
+      }
+  </script>
 
 </body>
 </html>
