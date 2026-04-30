@@ -55,19 +55,31 @@
   </footer>
 
   <script>
-  // Obține numele fișierului curent
-  const currentPage = window.location.pathname.split("/").pop();
-  
-  // Găsește toate butoanele din navigare
-  const buttons = document.querySelectorAll('.program-button');
-  
-  // Parcurge butoanele și adaugă clasa 'active' celui care se potrivește
-  buttons.forEach(button => {
-    const buttonHref = button.getAttribute('href');
-    if (buttonHref === currentPage) {
-      button.classList.add('active');
+    // Obține segmentul final al URL-ului (ex: 'shiftmaster', 'datamanager')
+    const currentPath = window.location.pathname;
+    const currentSlug = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+    // Selectează toate butoanele din navigație
+    const navButtons = document.querySelectorAll('.program-button');
+
+    navButtons.forEach(button => {
+        // Obține valoarea atributului href (ex: 'shiftmaster.html')
+        let buttonHref = button.getAttribute('href');
+        
+        // Elimină extensia .html din href pentru a compara doar numele (ex: 'shiftmaster')
+        let buttonSlug = buttonHref ? buttonHref.replace('.html', '') : '';
+
+        // Dacă slug-ul butonului se potrivește cu cel din URL, adaugă clasa 'active'
+        if (buttonSlug === currentSlug) {
+            button.classList.add('active');
+        }
+    });
+
+    // Caz special pentru pagina principală (index.html)
+    if (currentSlug === '' || currentSlug === 'index' || currentPath === '/') {
+        const homeIcon = document.querySelector('.home-icon');
+        if (homeIcon) homeIcon.classList.add('active');
     }
-  });
 </script>
 
 </body>
